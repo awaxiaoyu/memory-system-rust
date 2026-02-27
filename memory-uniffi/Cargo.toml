@@ -1,0 +1,24 @@
+[package]
+name = "memory-uniffi"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "iOS/Android bindings for memory-core using UniFFI"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+name = "memory_uniffi"
+
+[[bin]]
+name = "uniffi-bindgen"
+path = "src/uniffi_bindgen.rs"
+
+[dependencies]
+memory-core = { path = "../memory-core" }
+uniffi = { workspace = true, features = ["cli"] }
+tokio.workspace = true
+thiserror.workspace = true
+
+[build-dependencies]
+uniffi = { version = "0.28", features = ["build"] }

@@ -1,0 +1,21 @@
+[package]
+name = "memory-napi"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Node.js bindings for memory-core using napi-rs"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+memory-core = { path = "../memory-core" }
+napi.workspace = true
+napi-derive.workspace = true
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[build-dependencies]
+napi-build = "2"

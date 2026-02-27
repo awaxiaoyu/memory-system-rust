@@ -1,0 +1,58 @@
+[workspace]
+resolver = "2"
+members = [
+    "memory-core",
+    "memory-napi",
+    "memory-uniffi",
+    "examples/cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Meiju Team"]
+license = "MIT"
+
+[workspace.dependencies]
+# 序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# 异步运行时
+tokio = { version = "1.0", features = ["rt-multi-thread", "sync", "macros"] }
+
+# 向量数据库
+lancedb = { git = "https://github.com/lancedb/lancedb", features = ["remote"] }
+arrow-array = "57"
+arrow-schema = "57"
+
+# 知识图谱
+petgraph = "0.6"
+
+# 向量计算
+ndarray = "0.15"
+
+# HTTP 客户端
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+
+# 错误处理
+thiserror = "1.0"
+anyhow = "1.0"
+
+# UUID
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# 时间处理
+chrono = { version = "0.4", features = ["serde"] }
+
+# 日志
+log = "0.4"
+env_logger = "0.11"
+
+# 异步流
+futures = "0.3"
+
+# FFI 相关
+uniffi = "0.28"
+napi = { version = "2", features = ["async"] }
+napi-derive = "2"

@@ -1,0 +1,56 @@
+[package]
+name = "memory-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Core memory system with knowledge graph and vector storage"
+
+[lib]
+crate-type = ["rlib", "cdylib", "staticlib"]
+
+[dependencies]
+# 序列化
+serde.workspace = true
+serde_json.workspace = true
+
+# 异步运行时
+tokio.workspace = true
+
+# 向量数据库
+lancedb.workspace = true
+arrow-array.workspace = true
+arrow-schema.workspace = true
+
+# 知识图谱
+petgraph.workspace = true
+
+# 向量计算
+ndarray.workspace = true
+
+# HTTP 客户端
+reqwest.workspace = true
+
+# 错误处理
+thiserror.workspace = true
+anyhow.workspace = true
+
+# UUID
+uuid.workspace = true
+
+# 时间处理
+chrono.workspace = true
+
+# 日志
+log.workspace = true
+futures.workspace = true
+
+[target.'cfg(target_os = "android")'.dependencies]
+android_logger = "0.14"
+
+[target.'cfg(target_os = "ios")'.dependencies]
+oslog = "0.2"
+
+[dev-dependencies]
+tokio = { version = "1.0", features = ["full", "test-util"] }
+tempfile = "3.0"

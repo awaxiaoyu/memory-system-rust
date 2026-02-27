@@ -1,0 +1,36 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Node.js (napi)
+memory-napi/node_modules/
+memory-napi/*.node
+memory-napi/npm-debug.log*
+
+# Database
+*.lance/
+memory_db/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
